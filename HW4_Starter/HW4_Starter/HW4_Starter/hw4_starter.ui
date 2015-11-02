@@ -225,10 +225,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>Write</sender>
+   <signal>clicked()</signal>
+   <receiver>HW4_StarterClass</receiver>
+   <slot>handleWriteButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>819</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>753</x>
+     <y>673</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>sendPixmap(QPixmap)</signal>
   <slot>loadFile()</slot>
   <slot>handleReadButton()</slot>
+  <slot>handleWriteButton()</slot>
  </slots>
 </ui>

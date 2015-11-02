@@ -18,11 +18,13 @@ private:
 	//object for steganography here
 	Steganography steganography;
 	QPushButton *read_button;
-	const char* messageFile;
+	QString messageFile;
+	QTextEdit secretMessage;
 
 public slots:
 	void loadFile(void);
 	void handleReadButton(void);
+	void handleWriteButton(void);
 
 signals:
 	void sendPixmap(QPixmap);

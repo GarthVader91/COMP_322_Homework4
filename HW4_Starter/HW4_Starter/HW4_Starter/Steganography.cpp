@@ -24,7 +24,7 @@ void Steganography::readMessage(const char* filename)
 	bmp->saveBMP(filename, test, width, height);
 
 	ofstream myfile;
-	myfile.open ("example.txt");
+	myfile.open ("testSize.txt");
 	myfile << "The width is " << width << "\n";
 	myfile << "The height is " << height << "\n";
 	myfile.close();

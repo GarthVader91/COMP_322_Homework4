@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <iostream>
 #include "Windows.h"
+#include <fstream>
 
 using namespace std;
 
@@ -23,11 +24,23 @@ void HW4_Starter::loadFile() {
 	if(filename != QString()) {
 		emit sendPixmap(QPixmap(filename));
 	}
+
+	filename = filename.section('/',-1);
+
+	messageFile = filename;
 }
 void HW4_Starter::handleReadButton()
 {	
-	messageFile = filename.toStdString().c_str();
-	//steganography.readMessage("test.bmp");
 	if(messageFile != NULL)
-		steganography.readMessage(messageFile);
+		steganography.readMessage(messageFile.toStdString().c_str());
+}
+
+void HW4_Starter::handleWriteButton()
+{
+	QString message = ui.messageEdit->toPlainText();
+
+	ofstream myfile;
+	myfile.open ("secret.txt");
+	myfile << message.toStdString() << "\n";
+	myfile.close();
 }

@@ -97,6 +97,7 @@ public:
         QObject::connect(HW4_StarterClass, SIGNAL(sendPixmap(QPixmap)), label, SLOT(setPixmap(QPixmap)));
         QObject::connect(Read, SIGNAL(clicked()), HW4_StarterClass, SLOT(handleReadButton()));
         QObject::connect(Read, SIGNAL(clicked()), messageEdit, SLOT(clear()));
+        QObject::connect(Write, SIGNAL(clicked()), HW4_StarterClass, SLOT(handleWriteButton()));
 
         QMetaObject::connectSlotsByName(HW4_StarterClass);
     } // setupUi

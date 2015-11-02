@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_HW4_Starter_t {
-    QByteArrayData data[5];
-    char stringdata0[50];
+    QByteArrayData data[6];
+    char stringdata0[68];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,12 @@ QT_MOC_LITERAL(0, 0, 11), // "HW4_Starter"
 QT_MOC_LITERAL(1, 12, 10), // "sendPixmap"
 QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 8), // "loadFile"
-QT_MOC_LITERAL(4, 33, 16) // "handleReadButton"
+QT_MOC_LITERAL(4, 33, 16), // "handleReadButton"
+QT_MOC_LITERAL(5, 50, 17) // "handleWriteButton"
 
     },
     "HW4_Starter\0sendPixmap\0\0loadFile\0"
-    "handleReadButton"
+    "handleReadButton\0handleWriteButton"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,7 +48,7 @@ static const uint qt_meta_data_HW4_Starter[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -55,16 +56,18 @@ static const uint qt_meta_data_HW4_Starter[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x06 /* Public */,
+       1,    1,   34,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   32,    2, 0x0a /* Public */,
-       4,    0,   33,    2, 0x0a /* Public */,
+       3,    0,   37,    2, 0x0a /* Public */,
+       4,    0,   38,    2, 0x0a /* Public */,
+       5,    0,   39,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPixmap,    2,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -80,6 +83,7 @@ void HW4_Starter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 0: _t->sendPixmap((*reinterpret_cast< QPixmap(*)>(_a[1]))); break;
         case 1: _t->loadFile(); break;
         case 2: _t->handleReadButton(); break;
+        case 3: _t->handleWriteButton(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -119,13 +123,13 @@ int HW4_Starter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }
