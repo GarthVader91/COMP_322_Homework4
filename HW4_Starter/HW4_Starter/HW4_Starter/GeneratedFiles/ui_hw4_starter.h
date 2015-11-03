@@ -31,6 +31,7 @@ public:
     QAction *actionOpen;
     QAction *actionExit;
     QAction *actionExit_2;
+    QAction *actionSave;
     QWidget *centralWidget;
     QLabel *label;
     QDial *dial;
@@ -52,6 +53,8 @@ public:
         actionExit->setObjectName(QStringLiteral("actionExit"));
         actionExit_2 = new QAction(HW4_StarterClass);
         actionExit_2->setObjectName(QStringLiteral("actionExit_2"));
+        actionSave = new QAction(HW4_StarterClass);
+        actionSave->setObjectName(QStringLiteral("actionSave"));
         centralWidget = new QWidget(HW4_StarterClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
@@ -59,6 +62,7 @@ public:
         label->setGeometry(QRect(40, 30, 821, 421));
         label->setFrameShape(QFrame::StyledPanel);
         label->setScaledContents(true);
+        label->setAlignment(Qt::AlignCenter);
         dial = new QDial(centralWidget);
         dial->setObjectName(QStringLiteral("dial"));
         dial->setGeometry(QRect(70, 470, 111, 111));
@@ -88,6 +92,7 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionOpen);
+        menuFile->addAction(actionSave);
         menuFile->addSeparator();
         menuFile->addAction(actionExit_2);
 
@@ -96,8 +101,8 @@ public:
         QObject::connect(actionOpen, SIGNAL(triggered()), HW4_StarterClass, SLOT(loadFile()));
         QObject::connect(HW4_StarterClass, SIGNAL(sendPixmap(QPixmap)), label, SLOT(setPixmap(QPixmap)));
         QObject::connect(Read, SIGNAL(clicked()), HW4_StarterClass, SLOT(handleReadButton()));
-        QObject::connect(Read, SIGNAL(clicked()), messageEdit, SLOT(clear()));
         QObject::connect(Write, SIGNAL(clicked()), HW4_StarterClass, SLOT(handleWriteButton()));
+        QObject::connect(actionSave, SIGNAL(triggered()), HW4_StarterClass, SLOT(saveFile()));
 
         QMetaObject::connectSlotsByName(HW4_StarterClass);
     } // setupUi
@@ -108,7 +113,8 @@ public:
         actionOpen->setText(QApplication::translate("HW4_StarterClass", "Open...", 0));
         actionExit->setText(QApplication::translate("HW4_StarterClass", "Exit", 0));
         actionExit_2->setText(QApplication::translate("HW4_StarterClass", "Exit", 0));
-        label->setText(QApplication::translate("HW4_StarterClass", "TextLabel", 0));
+        actionSave->setText(QApplication::translate("HW4_StarterClass", "Save...", 0));
+        label->setText(QApplication::translate("HW4_StarterClass", "Select \"Open...\" to open a file", 0));
         label_2->setText(QApplication::translate("HW4_StarterClass", "Number of Bits Used", 0));
         Read->setText(QApplication::translate("HW4_StarterClass", "Read", 0));
         Write->setText(QApplication::translate("HW4_StarterClass", "Write", 0));

@@ -1,2 +1,2 @@
-The width is 962
-The height is 645
+The width is 0
+The height is 0

@@ -17,12 +17,13 @@ private:
 	Ui::HW4_StarterClass ui;
 	//object for steganography here
 	Steganography steganography;
-	QPushButton *read_button;
 	QString messageFile;
-	QTextEdit secretMessage;
+	const char* secretMessage;
+	QImage *imageObject;
 
 public slots:
 	void loadFile(void);
+	void saveFile(void);
 	void handleReadButton(void);
 	void handleWriteButton(void);
 
